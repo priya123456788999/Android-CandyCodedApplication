@@ -72,7 +72,6 @@ public class DetailActivity extends AppCompatActivity {
     // ***
     // TODO - Task 4 - Share the Current Candy with an Intent
     // ***
-
     public void createMapIntent(View view)
     {
         Uri uriAddress=Uri.parse("geo:0,0?q=618 E South St Orlando, FL 32801");
@@ -83,6 +82,7 @@ public class DetailActivity extends AppCompatActivity {
             startActivity(mapIntent);
 
         }
+
 
     }
 }
