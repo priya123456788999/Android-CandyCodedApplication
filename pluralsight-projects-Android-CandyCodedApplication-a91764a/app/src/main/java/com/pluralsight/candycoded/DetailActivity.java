@@ -3,10 +3,12 @@ package com.pluralsight.candycoded;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.pluralsight.candycoded.DB.CandyContract;
@@ -70,4 +72,17 @@ public class DetailActivity extends AppCompatActivity {
     // ***
     // TODO - Task 4 - Share the Current Candy with an Intent
     // ***
+
+    public void createMapIntent(View view)
+    {
+        Uri uriAddress=Uri.parse("geo:0,0?q=618 E South St Orlando, FL 32801");
+        Intent mapIntent=new Intent(Intent.ACTION_VIEW, uriAddress);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        if (mapIntent.resolveActivity(getPackageManager())!=null)
+        {
+            startActivity(mapIntent);
+
+        }
+
+    }
 }
